@@ -8,11 +8,11 @@
         public String? FullName => $"{FirstName} {LastName?.ToUpper()}";
         public int? Age { get; set; }
         public String? SelectedCourse { get; set; } = String.Empty;
-        public DateTime AppyAt { get; set; }
+        public DateTime ApplyAt { get; set; }
 
         public Candidate()
         {
-            AppyAt = DateTime.Now;
+            ApplyAt = DateTime.Now;
         }
     }
 }
