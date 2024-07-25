@@ -1,1 +1,38 @@
-﻿Course
+﻿@model IEnumerable<Candidate>
+
+@if (Model.Count() > 0)
+{
+    <h6 class="display-6">
+        Applications(@Model.Count())
+    </h6>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Apply At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Candidate candidate in Model)
+            {
+                <tr>
+                    <td>@candidate.FullName</td>
+                    <td>@candidate.Email</td>
+                    <td>@candidate.SelectedCourse</td>
+                    <td>@candidate.ApplyAt</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        There is no application. Please click here to
+        <a class="alert-link" asp-action="Apply"> apply.</a>
+    </div>
+}
